@@ -16,13 +16,16 @@ export function gerarCaptcha() {
     document.getElementById("result").textContent = "";
 }
 
-function checarCaptcha() {
+ export function checarCaptcha() {
     // Obtém o código inserido e o código CAPTCHA gerado
     const enteredCode = document.getElementById("captchaInput").value;
     const generatedCode = document.getElementById("captchaOutput").textContent;
     const resultParagraph = document.getElementById("result");
     const loader = document.getElementById("load")
     
+  
+   
+   
     // Verifica se o código digitado está correto
     if (enteredCode === generatedCode) {
         
@@ -57,7 +60,6 @@ function checarCaptcha() {
    
 }
 
-gerarCaptcha();
 
 
 
