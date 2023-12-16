@@ -1,7 +1,7 @@
 
 
         // Cria uma lista de dados para gerar um código aleatório
-function gerarCaptcha() {
+export function gerarCaptcha() {
     const caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz123456789";
     const captchaLength = 6;
     let captchaCode = "";
