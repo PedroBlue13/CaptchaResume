@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Captcha Generator</title>
+    <link rel="icon" href="./img/captcha.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+    <!-- Essa seção foi usada para criar o estilo borrado do container -->
+    <style>
+
+        body{
+            background-image: url("./img/montanhas.jpeg");
+            background-position: center;
+            background-size: cover;
+            width: 100%;
+        }
+
+        .box{
+            
+            border: 2px solid rgba(227, 170, 117, 0.093); 
+            border-radius: 20px; 
+            backdrop-filter: blur(15px);
+            background: transparent;
+            box-shadow: rgb(20, 185, 92);
+        }
+
+        
+        
+
+
+    </style>
+
+
+
+
+</head>
+<body  class=" h-screen flex items-center justify-center">
+
+
+    <!-- Essa Div por completo recebe os elementos do Captcha -->
+  
+    <div class="box p-8 rounded-md shadow-md ">
+      
+        
+        
+        
+        <h2 class="text-white text-2xl font-semibold mb-4">Digite o Código para ter acesso ao site.</h2>
+        
+        <!-- Esta div recebe o valor gerado aleatoriamente -->
+
+        <div class="flex items-center justify-center mb-6">
+            <span id="captchaOutput" class="text-4xl font-bold"></span>
+        </div>
+        
+            <label for="captchaInput" class="block text-white mb-2">Digite o Captcha:</label>
+            <input type="text" id="captchaInput" class="border rounded-full shadow-lg p-2 w-full mb-4 shadow-lg shadow-cyan-500/50">
+            
+            <!-- A basica animação após constatar o código digitado corretamente -->
+
+            <div id="load" class="hidden flex items-center space-x-2">
+            <div class="w-4 h-4 bg-blue-500 rounded-full animate-bounce"></div>
+            <div class="w-4 h-4 bg-blue-600 rounded-full animate-bounce "  style="animation-delay: 0.2s;"></div>
+            <div class="w-4 h-4 bg-blue-700 rounded-full animate-bounce "  style="animation-delay: 0.3s;" ></div>
+        </div>
+        
+        <p id="result" class="mt-4 text-red-500 font-semibold"></p>
+        <h1 class="opacity-0"> .</h1>
+      
+        <div class="flex space-x-4">
+            <button   onclick="checarCaptcha()" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-700">Verificar</button>
+            <button   onclick="gerarCaptcha()" class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-700 " >Gerar Código</button>
+            
+        </div>
+        </div>
+
+        <!-- Este elemento recebe o audio ambiente da tela de captcha -->
+        
+        <audio autoplay loop>
+
+            <source src="./img/pkmn.mp3" type="audio/mp3">
+            Seu navegador não suporta o elemento de áudio, que pena! :/
+      </audio>
+
+
+ 
+    <script src="./captcha.js"></script>
+
+
+</body>
+</html>
